@@ -14,6 +14,9 @@
 		D6B5120A1FF60A2D00AD06CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6B512081FF60A2D00AD06CC /* LaunchScreen.storyboard */; };
 		D6B512151FF60A2D00AD06CC /* H5MusicTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B512141FF60A2D00AD06CC /* H5MusicTestTests.swift */; };
 		D6B512201FF60A2D00AD06CC /* H5MusicTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B5121F1FF60A2D00AD06CC /* H5MusicTestUITests.swift */; };
+		D6B5122E1FF610AF00AD06CC /* message.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D6B5122D1FF610AF00AD06CC /* message.mp3 */; };
+		D6B512301FF6126000AD06CC /* H5MusicTest.html in Resources */ = {isa = PBXBuildFile; fileRef = D6B5122F1FF6126000AD06CC /* H5MusicTest.html */; };
+		D6B512321FF6171100AD06CC /* icon_40_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6B512311FF6171000AD06CC /* icon_40_2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		D6B5121B1FF60A2D00AD06CC /* H5MusicTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = H5MusicTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6B5121F1FF60A2D00AD06CC /* H5MusicTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = H5MusicTestUITests.swift; sourceTree = "<group>"; };
 		D6B512211FF60A2D00AD06CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B5122D1FF610AF00AD06CC /* message.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = message.mp3; sourceTree = "<group>"; };
+		D6B5122F1FF6126000AD06CC /* H5MusicTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = H5MusicTest.html; sourceTree = "<group>"; };
+		D6B512311FF6171000AD06CC /* icon_40_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_40_2x.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 			children = (
 				D6B511FF1FF60A2D00AD06CC /* AppDelegate.swift */,
 				D6B512011FF60A2D00AD06CC /* ViewController.swift */,
+				D6B5122F1FF6126000AD06CC /* H5MusicTest.html */,
+				D6B5122D1FF610AF00AD06CC /* message.mp3 */,
+				D6B512311FF6171000AD06CC /* icon_40_2x.png */,
 				D6B512031FF60A2D00AD06CC /* Main.storyboard */,
 				D6B512061FF60A2D00AD06CC /* Assets.xcassets */,
 				D6B512081FF60A2D00AD06CC /* LaunchScreen.storyboard */,
@@ -233,7 +242,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6B5120A1FF60A2D00AD06CC /* LaunchScreen.storyboard in Resources */,
+				D6B512301FF6126000AD06CC /* H5MusicTest.html in Resources */,
+				D6B512321FF6171100AD06CC /* icon_40_2x.png in Resources */,
 				D6B512071FF60A2D00AD06CC /* Assets.xcassets in Resources */,
+				D6B5122E1FF610AF00AD06CC /* message.mp3 in Resources */,
 				D6B512051FF60A2D00AD06CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

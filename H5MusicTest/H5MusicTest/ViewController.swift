@@ -47,10 +47,25 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
         // Do any additional setup after loading the view, typically from a nib.
         // https://tianji.rong360.com/tianjiwapreport/login?data=nD%2BRaNTUBXKJrM1QPpIetIpWI2iU5DejAjUo%2FRXJHMv%2BW13DSPQahuoMWVB1WxLBSyAwG7bcxRVgUE003PjpCrXD5DFxfthePEMRS7jd%2F4Wc%2BkmOEondu1Ckyn9lG9hhYaBobcA%2BanEaWnih7OLhtRwm%2FNT8eXMhWwPlmNvix0SWHY%2F3%2FFwxqaA1qNtQCTt7iYprTYXRRvdSr5ToKleZwO1aFQYPTGhFqLXe2sW2fi6oKE%2FZKdVQ2ovlICIo7qUS
         
-        let myURL = URL(string: "https://tianji.rong360.com/tianjiwapreport/login?data=nD%2BRaNTUBXKJrM1QPpIetIpWI2iU5DejAjUo%2FRXJHMv%2BW13DSPQahuoMWVB1WxLBSyAwG7bcxRVgUE003PjpCrXD5DFxfthePEMRS7jd%2F4Wc%2BkmOEondu1Ckyn9lG9hhYaBobcA%2BanEaWnih7OLhtRwm%2FNT8eXMhWwPlmNvix0SWHY%2F3%2FFwxqaA1qNtQCTt7iYprTYXRRvdSr5ToKleZwO1aFQYPTGhFqLXe2sW2fi6oKE%2FZKdVQ2ovlICIo7qUS")
-        let myRequest = URLRequest(url: myURL!)
+        
+        
+        
+        
+        let htmlPath: String = Bundle.main.path(forResource: "H5MusicTest", ofType: "html")!
+        let myURL = URL(fileURLWithPath: htmlPath)
+        
+        
+        
+//        let myURL = URL(string: "file:///Users/zetafin/Documents/H5MusicTest/H5MusicTest.html")
+        let myRequest = URLRequest(url: myURL)
         webViewOne.load(myRequest)
         contentController.add(self, name: "callbackHandler")
+        
+    }
+    
+    func loadExamplePage(webView: WKWebView) {
+        let htmlPath = Bundle.main.path(forResource: "H5MusicTest", ofType: "html")
+        
         
     }
     
