@@ -17,25 +17,19 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     
     var webViewOne: WKWebView!
     var contentController: WKUserContentController = WKUserContentController()
+
+    var webConfiguration = WKWebViewConfiguration()
+    
     
     override func loadView() {
         
-        /* 动态加载并运行JS代码 */
-        // JS代码片段 这里没什么用，最好只在页面加载后调用
-        let jsStr = ""
-        // 根据JS字符串初始化WKUserScript对象
-        let userScript = WKUserScript(source: jsStr, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        let userContentController = WKUserContentController()
-        userContentController.addUserScript(userScript)
-        
         // 根据生成的WKUserScript对象，初始化WKWebViewConfiguration
-        let webConfiguration = WKWebViewConfiguration()
-        webConfiguration.userContentController = userContentController
-        
+//        webConfiguration.mediaPlaybackRequiresUserAction = false;
         webViewOne = WKWebView(frame: .zero, configuration: webConfiguration)
         webViewOne.uiDelegate = self
         webViewOne.navigationDelegate = self
         
+
         // 用观察者添加进度条
         webViewOne.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         
@@ -44,30 +38,29 @@ class ViewController: UIViewController, WKUIDelegate, WKNavigationDelegate,WKScr
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        // https://tianji.rong360.com/tianjiwapreport/login?data=nD%2BRaNTUBXKJrM1QPpIetIpWI2iU5DejAjUo%2FRXJHMv%2BW13DSPQahuoMWVB1WxLBSyAwG7bcxRVgUE003PjpCrXD5DFxfthePEMRS7jd%2F4Wc%2BkmOEondu1Ckyn9lG9hhYaBobcA%2BanEaWnih7OLhtRwm%2FNT8eXMhWwPlmNvix0SWHY%2F3%2FFwxqaA1qNtQCTt7iYprTYXRRvdSr5ToKleZwO1aFQYPTGhFqLXe2sW2fi6oKE%2FZKdVQ2ovlICIo7qUS
-        
-        
-        
-        
+        // www.gonghuizhudi.com/H5Test/H5MusicTest.html
         
         let htmlPath: String = Bundle.main.path(forResource: "H5MusicTest", ofType: "html")!
         let myURL = URL(fileURLWithPath: htmlPath)
         
         
-        
-//        let myURL = URL(string: "file:///Users/zetafin/Documents/H5MusicTest/H5MusicTest.html")
+//        let myURL = URL(string: "http://www.gonghuizhudi.com/H5Test/H5MusicTest.html")
         let myRequest = URLRequest(url: myURL)
         webViewOne.load(myRequest)
         contentController.add(self, name: "callbackHandler")
         
     }
     
-    func loadExamplePage(webView: WKWebView) {
-        let htmlPath = Bundle.main.path(forResource: "H5MusicTest", ofType: "html")
-        
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        webConfiguration.mediaPlaybackRequiresUserAction = false;
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        webConfiguration.mediaPlaybackRequiresUserAction = true;
+    }
+    
     
     /**
      * WKNavigationDelegate
